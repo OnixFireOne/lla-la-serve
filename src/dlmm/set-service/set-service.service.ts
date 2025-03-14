@@ -5,6 +5,8 @@ export class SetService {
   private tvlThreshold = 1000; // Минимальный TVL ($)
   private volumeThreshold = 1000; // Объем за 5 минут ($)
   private percentFees = 20; // Change the percent of fees is up (%)
+  private feesRatioMin = 1;
+  private solAmount = 1;
 
   getTvlThreshold(): number {
     return this.tvlThreshold;
@@ -28,5 +30,22 @@ export class SetService {
 
   setPercentFeesUp(value: number) {
     this.percentFees = value;
+  }
+
+  // Fees ration then big, then less notification
+  getFeesRatioMin() {
+    return this.feesRatioMin;
+  }
+
+  setFeesRatioMin(value: number) {
+    this.feesRatioMin = value;
+  }
+
+  getSolAmount() {
+    return this.solAmount;
+  }
+
+  setSolAmount(value: number) {
+    this.solAmount = value;
   }
 }
